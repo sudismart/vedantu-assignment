@@ -1,42 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 *,
 ::after,
 ::before {
@@ -45,21 +6,14 @@
   box-sizing: border-box;
 }
 
-.side-section {
-  width: 25%;
-  /* padding: 10px; */
-  display: inline-block;
-  float: left;
-}
-
-.main-section {
-  width: 75%;
-  /* padding: 20px; */
-  display: inline-block;
+.App {
+  text-align: center;
+  width: 90%;
+  margin: 30px auto;
 }
 
 .side-image {
-  width: 80%;
+  width: 30%;
   border: 2px solid #fff;
   border-radius: 50%;
 }
@@ -140,4 +94,108 @@ svg:not(:root) {
 }
 .user-star-input {
   vertical-align: top;
+}
+
+/* tab scetion */
+.tabs {
+  max-width: 90%;
+  float: none;
+  list-style: none;
+  padding: 0;
+  margin: 75px auto;
+  border-bottom: 4px solid #ccc;
+}
+.tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tabs input[type="radio"] {
+  display: none;
+}
+.tabs label {
+  display: block;
+  float: left;
+  width: 20%;
+  color: #ccc;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2;
+  cursor: pointer;
+  border-bottom: 2px solid #ccc;
+}
+.tabs label span {
+  display: none;
+}
+.tabs label i {
+  padding: 5px;
+  margin-right: 0;
+}
+.tabs label:hover {
+  color: #121212;
+  border-bottom: 2px solid #121212;
+}
+.tab-content {
+  display: none;
+  width: 100%;
+  float: left;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.tabs [id^="tab"]:checked + label {
+  color: #121212;
+  background: #fff;
+  border-bottom: 2px solid #121212;
+}
+#tab1:checked ~ #tab-content1,
+#tab2:checked ~ #tab-content2,
+#tab3:checked ~ #tab-content3 {
+  display: block;
+}
+.tabs label span {
+  display: inline-block;
+}
+
+.tab-svg {
+  margin-right: 5px;
+}
+
+button {
+  padding: 5px;
+}
+.user-detail {
+  text-align: left;
+  float: right;
+}
+.user-detail p {
+  margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+  .tabs i {
+    padding: 5px;
+    margin-right: 10px;
+  }
+
+  .tabs {
+    max-width: 950px;
+    margin: 50px auto;
+  }
+  .side-section {
+    width: 20%;
+    margin-top: 100px;
+    float: left;
+  }
+
+  .main-section {
+    width: 80%;
+    display: inline-block;
+  }
+
+  .side-image {
+    width: 60%;
+    float: left;
+  }
 }
